@@ -1,0 +1,20 @@
+{
+    "name": "harlo/modular-cm",
+    "description": "",
+    "authors": [
+        {
+            "name": "Harlo Interactive",
+            "email": "dev@harlointeractive.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "4.1.x"
+    },
+    "autoload": {
+        "psr-0": {
+            "Harlo\\ModularCM": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
