@@ -1,5 +1,5 @@
 <?php namespace Harlo\ModularCM;
-
+use App;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Foundation\AliasLoader;
 
@@ -35,6 +35,7 @@ class ModularCMServiceProvider extends ServiceProvider {
 	public function boot()
 	{
 		$this->package('harlo/modular-cm');
+		include __DIR__.'/../../routes.php'; // Do some routing here specific to this package
 		AliasLoader::getInstance()->alias('Modular', 'Harlo\ModularCM\ModularCM');
 	}
 
