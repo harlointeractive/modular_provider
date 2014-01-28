@@ -12,6 +12,10 @@
         "illuminate/support": "4.1.x"
     },
     "autoload": {
+        "classmap": [
+            "src/migrations",
+            "src/controllers"
+        ],
         "psr-0": {
             "Harlo\\ModularCM": "src/"
         }

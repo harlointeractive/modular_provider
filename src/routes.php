@@ -11,11 +11,11 @@
 |
 */
 
-Route::get('admin', ['as' => 'admin', function()
-{
-	return View::make('admin.hello');
-}])->before('auth');
+// Route::get('admin', ['as' => 'admin', function()
+// {
+	
+// }])->before('auth');
 
-Route::get('login', ['as'=>'login', 'uses'=>'SessionsController@create']);
-Route::get('logout', ['as'=>'logout', 'uses'=>'SessionsController@destroy']);
-Route::resource('sessions', 'SessionsController', ['only'=> ['index', 'create', 'destroy']]);
+Route::get('login', ['as'=>'login', 'uses'=>'Harlo\ModularCM\Controllers\SessionsController@create']);
+Route::get('logout', ['as'=>'logout', 'uses'=>'Harlo\ModularCM\Controllers\SessionsController@destroy']);
+Route::resource('sessions', 'Harlo\ModularCM\Controllers\SessionsController', ['only'=> ['index', 'create', 'store', 'destroy']]);

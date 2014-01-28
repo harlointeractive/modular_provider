@@ -1,6 +1,9 @@
-<?php
+<?php namespace Harlo\ModularCM\Controllers;
+use Illuminate\Routing\Controller;
+use View, Config, Input, Auth, Redirect;
 
-class SessionsController extends BaseController {
+
+class SessionsController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -9,7 +12,7 @@ class SessionsController extends BaseController {
 	 */
 	public function index()
 	{
-        return View::make('sessions.index');
+        return View::make('modular-cm::sessions.index');
 	}
 
 	/**
@@ -19,7 +22,7 @@ class SessionsController extends BaseController {
 	 */
 	public function create()
 	{
-        return View::make('sessions.create');
+        return View::make('modular-cm::sessions.create');
 	}
 
 	/**
@@ -37,9 +40,7 @@ class SessionsController extends BaseController {
 			'password' => $input['password'],
 		]);
 
-		if($attempt) return Redirect::intended('/admin');
-
-
+		if($attempt) return Redirect::home();
 	}
 
 	/**
